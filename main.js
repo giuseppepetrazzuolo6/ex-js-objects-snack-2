@@ -51,7 +51,7 @@ const thirdBurger = structuredClone(hamburger);*/
 
 
 //🏆 Code Question 4
-const chef = {
+/*const chef = {
     name: "Chef Hyur",
     age: 29,
     makeBurger: (num = 1) => {
@@ -67,13 +67,13 @@ const restaurant = {
     },
     openingDate: new Date(2025, 3, 11),
     isOpen: false,
-};
+};*/
 //Qual è il metodo migliore per clonare l’oggetto chef, e perché? //lo spread (...chef) per la funzione
 //Qual è il metodo migliore per clonare l’oggetto restaurant, e perché? //structuredClone(restaurant) per il metodo date
 
 
 //🎯 Code Question 5 (Bonus)
-const hamburger = {
+/*const hamburger = {
     name: "Cheese Burger",
     weight: 250,
     maker: {
@@ -97,7 +97,7 @@ secondBurger.maker.name = "Chef Hyur";
 console.log(hamburger.maker.name); // ?
 console.log(secondBurger.maker.name); // ?
 console.log(hamburger.maker.restaurant.name); // ?
-console.log(secondBurger.maker.restaurant.name); // ?
+console.log(secondBurger.maker.restaurant.name); // ?*/
 //Senza lanciare il codice, riesci a prevedere cosa viene stampato in console?
 //Chef Hyur
 //Chef Hyur
@@ -105,3 +105,37 @@ console.log(secondBurger.maker.restaurant.name); // ?
 //Hyur's II
 //Quanti oggetti sono stati creati in memoria durante l'esecuzione di questo codice?
 //5
+
+//🎯 Code Question 6 (Bonus)
+const chef = {
+    name: "Chef Hyur",
+    age: 29,
+    makeBurger: (num = 1) => {
+        console.log(`Ecco ${num} hamburger per te!`);
+    },
+    restaurant: {
+        name: "Hyur's Burgers",
+        welcomeClient: () => {
+            console.log("Benvenuto!");
+        },
+        address: {
+            street: 'Main Street',
+            number: 123,
+            showAddress: () => {
+                console.log("Main Street 123");
+            }
+        },
+        isOpen: true,
+    }
+}
+//Qual è il metodo migliore per clonare l’oggetto chef, e perché?
+const chefClone = {
+    ...chef,
+    restaurant: {
+        ...chef.restaurant,
+        address: {
+            ...chef.restaurant.address
+        }
+    }
+}
+//structuredClone() ci permette di clonare tutti gli oggetti, non prende le funzioni ma possono comunque essere utilizzate
