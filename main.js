@@ -138,4 +138,3 @@ const chefClone = {
         }
     }
 }
-//structuredClone() ci permette di clonare tutti gli oggetti, non prende le funzioni ma possono comunque essere utilizzate
